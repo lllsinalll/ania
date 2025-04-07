@@ -645,23 +645,20 @@ body {
 
   /* Main navigation links container */
   .nav-links {
+    flex-direction: column;
     position: fixed;
-    top: 0;
+    top: 80px;
     right: -100%;
     width: 80%;
     max-width: 300px;
-    height: 100vh; /* Full viewport height */
-    min-height: -webkit-fill-available; /* For mobile browsers */
+    height: calc(100vh - 80px);
     background: var(--lightest-bg);
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-end; /* Align items to the right */
-    padding: 6rem 1.5rem 2rem; /* Adjusted padding */
     transition: right 0.3s ease;
-    z-index: 999; /* Below toggle but above content */
+    z-index: 1000;
+    padding: 2rem;
     overflow-y: auto;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
   }
+
   /* When mobile menu is active */
   .nav-links.active {
     right: 0;
@@ -674,15 +671,9 @@ body {
 
   /* Right-side items container */
   .nav-items-right {
-    display: flex !important;
-    flex-direction: row !important; /* Changed to row for inline display */
+    flex-direction: column;
+    width: 100%;
     gap: 1rem;
-    align-items: center;
-    width: auto;
-    padding: 0;
-    margin: 0;
-    position: static;
-    background: transparent;
   }
 
   /* Make all buttons visible and inline */
@@ -705,13 +696,14 @@ body {
 
   /* Left-side items container */
   .nav-items-left {
-    width: 100%;
-    text-align: right; /* Align items to the right side */
-    position: absolute; /* Make it absolute within the menu */
-    top: 0; /* Stick to the top of the menu */
-    right: 0; /* Align to the right edge of the menu */
-    padding-right: 1rem; /* Optional: Add padding to prevent sticking directly to the edge */
-    box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+    position: fixed; /* Make it position absolute within the nav-links */
+    top: 0; /* Position it at the top of the nav container */
+    right: 0; /* Align it to the right edge */
+    left: 100%;
+    width: auto; /* Allow it to take its natural width */
+    /* Optional: Add padding to create space from the edge */
+    box-sizing: border-box;
+    text-align: right; /* Align text to the right */
   }
 
   /* Dropdown adjustments */
@@ -734,6 +726,7 @@ body {
   .dropdown.active .dropdown-content {
     display: block;
   }
+
   .nested-dropdown-content {
     position: static;
     transform: none;
@@ -759,6 +752,7 @@ body {
     cursor: pointer;
   }
 
+  /* Hide duplicate buttons in mobile menu */
   .nav-links .search-button,
   .nav-links .cart-icon,
   .nav-links .account {
@@ -797,5 +791,63 @@ body {
   .nav-items-left {
     flex-wrap: wrap;
     justify-content: center;
+  }
+}
+@media (max-width: 992px) {
+  /* Mobile Menu Container */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: var(--lightest-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* This aligns all children to the right */
+    padding: 5rem 1.5rem 2rem; /* Right padding matches left */
+    transition: right 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Menu items container - simplified */
+  .nav-items-left {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Right-align all items */
+  }
+
+  /* Individual menu items */
+  .nav-items-left > *,
+  .dropdown-main,
+  .nav-item {
+    width: 100%;
+    text-align: right; /* Text alignment */
+    padding: 0.75rem 0;
+    margin: 0;
+  }
+
+  /* Dropdown menus */
+  .dropdown-content {
+    width: 100%;
+    text-align: right;
+    padding-right: 1rem;
+    border-right: 2px solid var(--light-bg);
+  }
+
+  /* Nested dropdowns */
+  .nested-dropdown-content {
+    width: 100%;
+    text-align: right;
+    padding-right: 1rem;
+  }
+
+  /* Active menu state */
+  .nav-links.active {
+    right: 0;
   }
 }
