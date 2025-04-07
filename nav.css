@@ -707,7 +707,7 @@ body {
   /* Left-side items container */
   .nav-items-left {
     width: 100%;
-    text-align: center; /* Right alignment for RTL */
+    text-align: right; /* Right alignment for RTL */
   }
 
   /* Dropdown adjustments */
