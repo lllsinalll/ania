@@ -273,32 +273,6 @@ body {
 }
 
 @media (max-width: 992px) {
-  .nav-links {
-    flex-direction: column;
-    position: fixed;
-    top: 80px;
-    right: -100%;
-    width: 80%;
-    max-width: 300px;
-    height: calc(100vh - 80px);
-    background: var(--lightest-bg);
-    transition: right 0.3s ease;
-    z-index: 1000;
-    padding: 2rem;
-    overflow-y: auto;
-  }
-
-  .nav-links.active {
-    right: 0;
-  }
-
-  .nav-items-left,
-  .nav-items-right {
-    flex-direction: column;
-    width: 100%;
-    gap: 1rem;
-  }
-
   .logo-account-group {
     margin-left: 0;
   }
@@ -375,12 +349,6 @@ body {
   }
 }
 
-
-@media (max-width: 992px) {
-  .mobile-menu-toggle {
-    display: block;
-  }
-}
 .slideshow {
   height: 300px;
 }
@@ -451,11 +419,12 @@ h2 {
 .nav-items-left > *:not(.dropdown):not(.nav-item[href*="level.html"]),
 .nav-items-left .dropdown,
 .nav-items-right .search-button {
-  pointer-events: none;
-  opacity: 0.6;
+
+  pointer-events: auto;
+  opacity: 1;
 }
 
-/* Keep these elements enabled */
+
 .logo,
 .account,
 .nav-item[href*="level.html"] {
@@ -467,4 +436,48 @@ h2 {
 .dropdown-main,
 .nested-dropdown-main {
   pointer-events: none;
+}
+
+
+/* Add this to your page-specific CSS (after global CSS) */
+@media (max-width: 992px) {
+  /* Force mobile menu visibility */
+  .nav-links {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  /* Override any conflicting global styles */
+  .nav-items-left {
+    display: flex !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  /* Ensure all menu items are visible */
+  .nav-items-left > *,
+  .dropdown,
+  .dropdown-main,
+  .nested-dropdown-main {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  /* Right-align menu items */
+  .nav-items-left {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 1.5rem;
+  }
+
+  /* Mobile menu container */
+ 
+
+  .nav-links.active {
+    right: 0;
+  }
 }
