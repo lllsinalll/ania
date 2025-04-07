@@ -1595,30 +1595,8 @@ a.flag-card:visited {
 }
 
 @media (max-width: 992px) {
-  .nav-links {
-    flex-direction: column;
-    position: fixed;
-    top: 80px;
-    right: -100%;
-    width: 80%;
-    max-width: 300px;
-    height: calc(100vh - 80px);
-    background: var(--lightest-bg);
-    transition: right 0.3s ease;
-    z-index: 1000;
-    padding: 2rem;
-    overflow-y: auto;
-  }
-
   .nav-links.active {
     right: 0;
-  }
-
-  .nav-items-left,
-  .nav-items-right {
-    flex-direction: column;
-    width: 100%;
-    gap: 1rem;
   }
 
   .logo-account-group {
@@ -1698,20 +1676,7 @@ a.flag-card:visited {
 }
 
 /* Mobile Menu Toggle Button (add this to your HTML) */
-.mobile-menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  color: var(--primary);
-  cursor: pointer;
-}
 
-@media (max-width: 992px) {
-  .mobile-menu-toggle {
-    display: block;
-  }
-}
 .slideshow {
   height: 300px;
 }
@@ -1772,7 +1737,6 @@ h2 {
   opacity: 0.6;
 }
 
-/* Keep these elements enabled */
 .logo,
 .account,
 .nav-item[href*="level.html"] {
@@ -1780,7 +1744,6 @@ h2 {
   opacity: 1;
 }
 
-/* Disable dropdown interactions */
 .dropdown-main,
 .nested-dropdown-main {
   pointer-events: none;
