@@ -419,11 +419,9 @@ h2 {
 .nav-items-left > *:not(.dropdown):not(.nav-item[href*="level.html"]),
 .nav-items-left .dropdown,
 .nav-items-right .search-button {
-
   pointer-events: auto;
   opacity: 1;
 }
-
 
 .logo,
 .account,
@@ -438,23 +436,8 @@ h2 {
   pointer-events: none;
 }
 
-
 /* Add this to your page-specific CSS (after global CSS) */
 @media (max-width: 992px) {
-  /* Force mobile menu visibility */
-  .nav-links {
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-
-  /* Override any conflicting global styles */
-  .nav-items-left {
-    display: flex !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
-  }
-
   /* Ensure all menu items are visible */
   .nav-items-left > *,
   .dropdown,
@@ -475,9 +458,58 @@ h2 {
   }
 
   /* Mobile menu container */
- 
 
-  .nav-links.active {
-    right: 0;
+  /* Menu items positioning */
+  .nav-items-left {
+    position: static !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    width: 100% !important;
+    opacity: 1 !important;
+    margin: 0 !important;
+    padding: 5px 0 !important; /* Reduced padding */
+    gap: 25px !important; /* Reduced gap between items */
+    align-items: flex-start; /* Right-align items */
+  }
+  .nav-items-left > a:not(.dropdown-main),
+  .nav-items-left > .nav-item {
+    margin-bottom: 15px !important; /* Larger gap below regular items */
+  }
+
+  /* Individual menu items */
+  .nav-items-left > * {
+    margin: 0 !important; /* Removed vertical margin */
+    padding: 6px 10px !important; /* Reduced padding */
+    text-align: right;
+    width: auto;
+    align-self: flex-start;
+  }
+  .dropdown-content {
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Optional: Make menu button and first item perfectly aligned */
+  .mobile-menu-toggle {
+    margin-top: 10px; /* Match nav-items-left padding-top */
+  }
+}
+@media (max-width: 992px) {
+  /* Disable all mobile menu items by default */
+  .nav-items-left > *:not([href*="level.html"]) {
+    pointer-events: none;
+    opacity: 0.5;
+    filter: grayscale(80%);
+  }
+
+  /* Keep "تعیین سطح" fully enabled */
+  .nav-items-left > [href*="level.html"] {
+    pointer-events: auto;
+    opacity: 1 !important;
+    filter: none !important;
+   
+    border-radius: 6px;
+    font-weight: bold;
   }
 }
