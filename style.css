@@ -1614,6 +1614,9 @@ a.flag-card:visited {
   .flag-card {
     flex: 0 0 180px;
   }
+  .dropdown-content {
+    transform: translateX(150px); /* Add this line to shift right */
+  }
 }
 
 @media (max-width: 768px) {
@@ -1748,6 +1751,7 @@ h2 {
 .nested-dropdown-main {
   pointer-events: none;
 }
+
 @media (max-width: 992px) {
   /* Shift only the text inside dropdown triggers right by 5px */
   .dropdown-main {
@@ -1761,4 +1765,32 @@ h2 {
     margin-right: 6px !important;
   }
 }
+@media (max-width: 992px) {
+  /* 1. Move up all nav items except account button */
+  .nav-links .nav-items-left {
+    margin-top: -10px !important; /* Pull items up */
+  }
 
+  /* 2. Fine-tune account button position */
+  .nav-items-right .account {
+    margin-top: 5px !important; /* Slight downward push */
+    margin-bottom: 5px !important;
+  }
+
+  /* 3. Adjust spacing between left nav items */
+  .nav-items-left > *:not(.dropdown) {
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* 4. Keep dropdowns tight */
+  .nav-items-left .dropdown {
+    margin-top: 20px !important;
+    margin-bottom: 15px !important;
+  }
+
+  /* 5. Ensure cart icon has proper spacing */
+  .cart-icon-container {
+    margin-top: 10px !important;
+  }
+}
