@@ -508,8 +508,36 @@ h2 {
     pointer-events: auto;
     opacity: 1 !important;
     filter: none !important;
-   
-    border-radius: 6px;
+
     font-weight: bold;
+  }
+}
+@media (max-width: 992px) {
+  /* 1. Move up all nav items except account button */
+  .nav-links .nav-items-left {
+    margin-top: -10px !important; /* Pull items up */
+  }
+
+  /* 2. Fine-tune account button position */
+  .nav-items-right .account {
+    margin-top: 5px !important; /* Slight downward push */
+    margin-bottom: 5px !important;
+  }
+
+  /* 3. Adjust spacing between left nav items */
+  .nav-items-left > *:not(.dropdown) {
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* 4. Keep dropdowns tight */
+  .nav-items-left .dropdown {
+    margin-top: 0 !important;
+    margin-bottom: 15px !important;
+  }
+
+  /* 5. Ensure cart icon has proper spacing */
+  .cart-icon-container {
+    margin-top: 10px !important;
   }
 }
