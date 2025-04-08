@@ -851,3 +851,94 @@ body {
     right: 0;
   }
 }
+
+@media (max-width: 992px) {
+  /* 1. Hide search button completely */
+  .nav-items-right .search-button {
+    display: none !important;
+  }
+
+  /* 2. Style account button specifically */
+  .nav-items-right .account {
+    display: flex !important;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background: none !important; /* Remove background */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Add bottom border */
+    padding: 12px 0 !important; /* Vertical padding */
+    margin: 0 0 15px 0 !important; /* Space below */
+    width: 100%; /* Full width */
+    border-radius: 0 !important; /* Remove rounded corners */
+  }
+
+  /* 3. Adjust cart icon positioning */
+  .nav-items-right .cart-icon-container {
+    margin-top: 15px; /* Space above cart */
+    padding-top: 15px; /* Visual separation */
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Top border */
+  }
+
+  /* 4. Container adjustments */
+  .nav-links.active .nav-items-right {
+    display: flex !important;
+    flex-direction: column;
+    order: -1;
+    padding: 0 15px; /* Side padding only */
+    margin: 20px 0 0 0; /* Space above */
+    background: transparent !important; /* Remove background */
+    gap: 0 !important; /* Remove default gap */
+  }
+
+  /* 5. Remove icon margins for better centering */
+  .nav-items-right .account i {
+    margin-left: 8px;
+    margin-right: 0 !important;
+  }
+}
+@media (max-width: 992px) {
+  /* 1. Completely hide search button */
+  .nav-items-right .search-button {
+    display: none !important;
+  }
+
+  /* 2. Account button styling */
+  .nav-items-right .account {
+    display: flex !important;
+    justify-content: center;
+    width: 100vw; /* Full viewport width */
+    margin-left: -15px; /* Counteract menu padding */
+    margin-right: -15px;
+    padding: 15px 0 !important;
+    background: none !important;
+    border-bottom: 0 solid rgba(0, 0, 0, 0.15); /* Subtle border */
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    position: relative; /* For border positioning */
+  }
+
+  /* 3. Remove all gaps around account button */
+  .nav-items-right {
+    gap: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* 4. Cart icon adjustments */
+  .nav-items-right .cart-icon-container {
+    padding: 15px 0;
+    margin: 0 -15px; /* Full width alignment */
+    width: 100vw;
+  }
+
+  /* 5. Ensure no overflow issues */
+  .nav-links {
+    overflow-x: hidden !important;
+  }
+}
+@media (max-width: 992px) {
+  .nav-items-right .account {
+    width: calc(100% + 30px) !important;
+    margin: 0 -15px !important;
+    /* Rest of the styles same as above */
+  }
+}
