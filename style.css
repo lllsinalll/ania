@@ -1748,3 +1748,17 @@ h2 {
 .nested-dropdown-main {
   pointer-events: none;
 }
+@media (max-width: 992px) {
+  /* Shift only the text inside dropdown triggers right by 5px */
+  .dropdown-main {
+    padding-right: 5px !important; /* For RTL (right padding affects left visually) */
+    transform: translateX(-6px) !important; /* Negative for RTL */
+  }
+
+  /* Adjust caret icon position to stay aligned */
+  .dropdown-main i.fas {
+    margin-left: 0 !important;
+    margin-right: 6px !important;
+  }
+}
+
