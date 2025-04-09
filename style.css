@@ -1822,6 +1822,11 @@ h2 {
   .cart-icon-container {
     margin-top: 10px !important;
   }
+  .logo img,
+  .logo span {
+    transform: translateX(30px); /* Fine-tune alignment */
+  }
+}
 }
 @media (max-width: 412px) and (orientation: portrait) {
   .nav-links {
