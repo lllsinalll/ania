@@ -942,8 +942,5 @@ body {
     /* Rest of the styles same as above */
   }
 
-  .logo img,
-  .logo span {
-    transform: translateX(5px); /* Fine-tune alignment */
-  }
+
 }
