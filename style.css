@@ -1794,7 +1794,7 @@ h2 {
     margin-top: 10px !important;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 430px) {
   /* 1. Move up all nav items except account button */
   .nav-links .nav-items-left {
     margin-top: -10px !important; /* Pull items up */
