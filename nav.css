@@ -944,6 +944,6 @@ body {
 
   .logo img,
   .logo span {
-    transform: translateX(30px); /* Fine-tune alignment */
+    transform: translateX(5px); /* Fine-tune alignment */
   }
 }
