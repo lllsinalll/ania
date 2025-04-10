@@ -1794,7 +1794,7 @@ h2 {
     margin-top: 10px !important;
   }
 }
-@media (max-width: 430px) {
+@media (max-width: 768px) {
   /* 1. Move up all nav items except account button */
   .nav-links .nav-items-left {
     margin-top: -10px !important; /* Pull items up */
@@ -1822,11 +1822,7 @@ h2 {
   .cart-icon-container {
     margin-top: 10px !important;
   }
-
-
 }
-@media (max-width: 412px) and (orientation: portrait) {
-  .nav-links {
-    padding-top: 30px !important;
-  }
+.cart-icon-container {
+  display: none;
 }
