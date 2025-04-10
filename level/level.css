@@ -541,3 +541,176 @@ h2 {
     margin-top: 10px !important;
   }
 }
+@media (max-width: 992px) {
+  /* Target all nav items and dropdowns */
+  .nav-items-left .navlinks:not([href*="level.html"]),
+  .nav-items-left .dropdown-main {
+    /* Visual deactivation */
+    opacity: 0.6 !important;
+    filter: grayscale(100%);
+
+    /* Functional deactivation */
+    pointer-events: none !important;
+    cursor: default !important;
+
+    /* Remove any hover effects */
+    transform: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+
+  /* Keep account button and level test link fully active */
+  .nav-items-right .account,
+  .nav-items-left [href*="level.html"] {
+    filter: none !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+  }
+
+  /* Visual emphasis for active level test link */
+  .nav-items-left [href*="level.html"] {
+    position: relative;
+    font-weight: bold;
+    color: var(--primary) !important;
+  }
+
+  /* Disable dropdown arrows */
+  .nav-items-left .dropdown-main::after {
+    display: none !important;
+  }
+}
+@media (max-width: 992px) {
+  /* Disable ALL regular navlinks except تعیین سطح */
+  .nav-items-left .navlinks:not([href*="level.html"]) {
+    /* Visual deactivation */
+    opacity: 0.3 !important;
+    filter: grayscale(100%);
+
+    /* Functional deactivation */
+    pointer-events: none !important;
+    cursor: default !important;
+
+    /* Remove any hover effects */
+    background: transparent !important;
+    transform: none !important;
+    box-shadow: none !important;
+    color: inherit !important;
+  }
+}
+@media (max-width: 992px) {
+  /* Disable specific nav-items */
+  .nav-items-left .nav-item[href="articles/article.html"],
+  .nav-items-left .nav-item[href="contact/contact.html"] {
+    /* Visual deactivation */
+    opacity: 0.6 !important;
+    filter: grayscale(100%);
+
+    /* Functional deactivation */
+    pointer-events: none !important;
+    cursor: default !important;
+
+    /* Remove any hover effects */
+    background: transparent !important;
+    transform: none !important;
+    box-shadow: none !important;
+    color: inherit !important;
+  }
+
+  /* Keep تعیین سطح link active */
+  .nav-items-left .nav-item[href*="level.html"] {
+    opacity: 1 !important;
+    filter: none !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    font-weight: bold;
+    color: var(--primary) !important;
+    position: relative;
+  }
+}
+.cart-icon-container {
+  display: none;
+}
+/* Disable ALL navigation items and dropdown triggers */
+.nav-items-left .nav-item,
+.nav-items-left .dropdown-main {
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: default;
+
+  /* Remove hover effects */
+  background: transparent !important;
+  color: inherit !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Hide dropdown menus completely */
+.nav-items-left .dropdown-content {
+  display: none !important;
+}
+
+/* Keep تعیین سطح active */
+.nav-items-left .nav-item[href*="level.html"] {
+  opacity: 1;
+  pointer-events: auto;
+  cursor: pointer;
+  font-weight: bold;
+  color: #2c5f2d !important;
+}
+
+/* Keep search button active */
+.nav-items-right .search-button {
+  opacity: 1;
+  pointer-events: auto;
+  cursor: pointer;
+}
+/* Force-disable ALL nav items except تعیین سطح */
+.nav-items-left > .nav-item:not([href*="level.html"]) {
+  opacity: 0.6 !important;
+  pointer-events: none !important;
+  cursor: default !important;
+  user-select: none !important;
+
+  /* Destroy all hover/focus/active states */
+  &:hover,
+  &:active,
+  &:focus,
+  &:visited {
+    background: transparent !important;
+    color: inherit !important;
+    transform: none !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Hide any pseudo-elements */
+  &::before,
+  &::after {
+    display: none !important;
+  }
+}
+/* Force-disable ALL nav items except تعیین سطح */
+.search-button {
+  opacity: 0.6 !important;
+  pointer-events: none !important;
+  cursor: default !important;
+  user-select: none !important;
+
+  /* Destroy all hover/focus/active states */
+  &:hover,
+  &:active,
+  &:focus,
+  &:visited {
+    background: transparent !important;
+    color: inherit !important;
+    transform: none !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Hide any pseudo-elements */
+  &::before,
+  &::after {
+    display: none !important;
+  }
+}
