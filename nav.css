@@ -936,7 +936,7 @@ body {
   }
   logo img,
   .logo span {
-    transform: translateX(40px); /* Fine-tune alignment */
+    transform: translateX(20px); /* Fine-tune alignment */
   }
 }
 @media (max-width: 992px) {
