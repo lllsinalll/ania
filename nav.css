@@ -948,3 +948,30 @@ body {
 
 
 }
+@media (max-width: 992px) {
+  .nav-items-right .account {
+    /* Ensure text is visible and properly styled */
+    color: var(--primary) !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    text-shadow: none !important;
+    background: rgba(
+      79,
+      188,
+      74,
+      0.15
+    ) !important; /* Slightly more visible background */
+    padding: 12px 15px !important; /* Proper padding */
+    margin: 0 -15px 15px -15px !important; /* Consistent margins */
+    width: calc(100% + 30px) !important;
+    border-radius: 0 !important;
+  }
+
+  /* Specifically target Telegram browser */
+  @supports (-webkit-touch-callout: none) {
+    .nav-items-right .account {
+      -webkit-text-fill-color: var(--primary); /* Fix text color */
+      opacity: 1 !important; /* Force visibility */
+    }
+  }
+}
