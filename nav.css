@@ -896,11 +896,9 @@ body {
   }
 }
 @media (max-width: 992px) {
-
   .nav-items-right .search-button {
     display: none !important;
   }
-
 
   .nav-items-right .account {
     display: flex !important;
@@ -934,10 +932,6 @@ body {
   .nav-links {
     overflow-x: hidden !important;
   }
-  logo img,
-  .logo span {
-    transform: translateX(20px); /* Fine-tune alignment */
-  }
 }
 @media (max-width: 992px) {
   .nav-items-right .account {
@@ -946,8 +940,13 @@ body {
     /* Rest of the styles same as above */
   }
 
-
+  .logo img,
+  .logo span {
+    transform: translateX(30px); /* Fine-tune alignment */
+  }
 }
+
+
 @media (max-width: 576px) {
   /* Ensure account text remains visible */
   .account-text {
@@ -984,10 +983,5 @@ body {
   .account {
     padding: 8px 12px !important;
     min-width: max-content !important;
-  }
-}
-
-
-
   }
 }
