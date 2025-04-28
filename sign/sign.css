@@ -417,17 +417,25 @@ body::before {
 /* Responsive */
 @media (max-width: 480px) {
   .form-container {
-    width: 90%;
-    padding: 30px;
+    width: 100%;
+    max-width: 400px;
     height: auto;
+    padding: 25px;
+    margin: 20px auto;
+    border-radius: 15px;
+    overflow: visible;
   }
 
   .form-box {
+    width: 100%;
     position: relative;
     padding: 0;
-    left: 0 !important;
-    opacity: 1 !important;
-    margin-bottom: 30px;
+    margin: 0 auto;
+  }
+
+  .form-title {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
   }
 
   .form-container.active .login-form,
@@ -435,30 +443,58 @@ body::before {
     display: block;
   }
 
-  .input-group i {
-    left: 15px;
+  .input-group {
+    margin-bottom: 25px;
+    width: 100%;
   }
 
+  .input-group input {
+    padding: 14px 45px 14px 15px;
+    font-size: 0.95rem;
+  }
+
+  .input-group i {
+    left: 15px;
+    font-size: 1rem;
+  }
+
+  .error-message {
+    font-size: 0.75rem;
+    bottom: -22px;
+  }
   .user-type-selector {
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
+    gap: 8px;
+    margin-bottom: 25px;
+  }
+
+  .user-type {
+    flex: 1;
+  }
+
+  .user-type label {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+  .btn {
+    padding: 14px;
+    font-size: 1rem;
+    margin-top: 15px;
+  }
+
+  .social-login {
+    margin: 20px 0;
+    gap: 12px;
+  }
+
+  .social-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
   }
 }
-/* Add this to your sign.css file */
-#confirmPassword {
-  display: block !important;
-  width: 100% !important;
-  height: auto !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  margin-top: -20px;
-}
-.signup-form .input-group:nth-child(5) {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  height: auto !important;
-}
+
+/* Mobile Styles */
 @media (max-width: 768px) {
   body {
     display: flex;
@@ -493,7 +529,7 @@ body::before {
   /* Login Form Specific Adjustments */
   .login-form {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     align-items: center;
     width: 100%;
   }
@@ -563,5 +599,216 @@ body::before {
   /* Toggle Form Link */
   .toggle-form {
     margin: 30px 0 0 0;
+  }
+}
+@media (max-width: 480px) {
+  /* Input fields - both forms */
+  .form-container .input-group {
+    margin-bottom: 25px;
+  }
+
+  .form-container input {
+    padding: 14px 45px 14px 15px;
+    font-size: 0.95rem;
+  }
+
+  /* Buttons - both forms */
+  .form-container .btn {
+    padding: 14px;
+    font-size: 1rem;
+    margin: 15px 0 10px;
+  }
+
+  /* Login form specific adjustments */
+  .login-form {
+    padding-top: 15px;
+    width: 100% !important;
+  }
+
+  .login-form .input-group:first-child {
+    margin-bottom: 30px;
+  }
+
+  .login-form .input-group:nth-child(2) {
+    margin-bottom: 25px;
+  }
+
+  /* Social buttons - both forms */
+  .form-container .social-login {
+    margin: 25px 0;
+  }
+
+  .form-container .social-btn {
+    width: 46px;
+    height: 46px;
+  }
+
+  /* Toggle link - both forms */
+  .form-container .toggle-form {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 480px) {
+  /* INPUT FIELDS - Make identical to signup form */
+  .login-form input[type="text"],
+  .login-form input[type="password"] {
+    padding: 15px 45px 15px 15px; /* Exact same as signup */
+    height: 52px; /* Explicit height matching */
+    font-size: 0.95rem; /* Same font size */
+    border-radius: 50px; /* Same rounded corners */
+  }
+
+  /* BUTTON - Exact match to signup button */
+  .login-form .btn {
+    padding: 15px; /* Same vertical padding */
+    height: 52px; /* Same height as signup button */
+    font-size: 1rem; /* Same text size */
+    font-weight: 500; /* Same weight if needed */
+    letter-spacing: 0.5px; /* Match if signup has this */
+  }
+
+  /* ICONS - Perfect alignment */
+  .login-form .input-group i {
+    left: 15px; /* Same position */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.1rem; /* Same icon size */
+  }
+
+  /* ERROR MESSAGES - Consistent styling */
+  .login-form .error-message {
+    font-size: 0.75rem; /* Same as signup */
+    bottom: -22px; /* Same positioning */
+  }
+}
+@media (max-width: 480px) {
+  /* Fix input widths */
+  .login-form input,
+  .signup-form input {
+    width: 100% !important; /* Force full width */
+    box-sizing: border-box; /* Include padding in width */
+    min-width: 100%; /* Prevent shrinkage */
+  }
+
+  /* Fix button widths */
+  .login-form .btn,
+  .signup-form .btn {
+    width: 100% !important;
+    min-width: 100%; /* Prevent any shrinkage */
+    display: block; /* Ensure full width behavior */
+  }
+}
+@media (max-width: 480px) {
+  /* ONLY adjust login form input widths */
+  .login-form input {
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+
+  /* ONLY adjust login submit button width */
+  .login-form .btn {
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Force full width at all levels */
+  .login-form,
+  .login-form > form,
+  .login-form .input-group,
+  .login-form input,
+  .login-form .btn {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: none !important;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    box-sizing: border-box !important;
+  }
+}
+@media (max-width: 480px) {
+  /* Slightly narrower than full width */
+  .login-form {
+    width: 90% !important;
+    margin: 0 auto !important; /* Center the form */
+  }
+
+  /* Input/button sizing */
+  .login-form .input-group,
+  .login-form input,
+  .login-form .btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Padding adjustment */
+  .login-form input {
+    padding: 15px 40px 15px 15px !important; /* Balanced padding */
+  }
+}
+@media (max-width: 480px) {
+  /* Input field adjustments */
+  .login-form input {
+    padding-left: 38px !important; /* More space for icon */
+  }
+
+  /* Icon positioning */
+  .login-form .input-group i {
+    left: 26px !important; /* Move icon right */
+    transform: translateY(-50%) scale(0.9); /* Optional: Slightly smaller */
+    color: rgba(255, 255, 255, 0.7) !important; /* Maintain visibility */
+  }
+}
+@media (max-width: 756px) {
+  /* Force full width at all levels */
+  .login-form,
+  .login-form > form,
+  .login-form .input-group,
+  .login-form input,
+  .login-form .btn {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: none !important;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    box-sizing: border-box !important;
+  }
+}
+@media (max-width: 756px) {
+  /* Slightly narrower than full width */
+  .login-form {
+    width: 90% !important;
+    margin: 0 auto !important; /* Center the form */
+  }
+
+  /* Input/button sizing */
+  .login-form .input-group,
+  .login-form input,
+  .login-form .btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Padding adjustment */
+  .login-form input {
+    padding: 15px 40px 15px 15px !important; /* Balanced padding */
+  }
+}
+@media (max-width: 756px) {
+  /* Input field adjustments */
+  .login-form input {
+    padding-left: 38px !important; /* More space for icon */
+  }
+
+  /* Icon positioning */
+  .login-form .input-group i {
+    left: 26px !important; /* Move icon right */
+    transform: translateY(-50%) scale(0.9); /* Optional: Slightly smaller */
+    color: rgba(255, 255, 255, 0.7) !important; /* Maintain visibility */
   }
 }
