@@ -951,7 +951,7 @@ body {
   /* Ensure account text remains visible */
   .account-text {
     display: inline-block !important;
-    font-size: 16px !important;
+    font-size: 20px !important;
     opacity: 1 !important;
     visibility: visible !important;
     width: auto !important;
@@ -971,7 +971,7 @@ body {
   /* Ensure account text remains visible */
   .account-text {
     display: inline-block !important;
-    font-size: 10px !important;
+    font-size: 16px !important;
     opacity: 1 !important;
     visibility: visible !important;
     width: auto !important;
